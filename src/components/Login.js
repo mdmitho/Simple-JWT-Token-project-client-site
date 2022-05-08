@@ -26,6 +26,10 @@ fetch("http://localhost:5000/login",{
 })
    .then(res=>res.json())
    .then(data =>{
+       if(data.success){
+           localStorage.setItem('accessToken',data.accessToken)
+           navigate('/orders')
+       }
 console.log(data);
    })
     }
